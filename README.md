@@ -1,11 +1,13 @@
+# One-Line Laugh Sprint — Round 2
+
 [![make.fun](https://make.fun/badge/u-ronigrv-the-one-line-laugh-7ccca46f.svg)](https://make.fun/bounty/u-ronigrv-the-one-line-laugh-7ccca46f)
 [![rank](https://make.fun/badge/u-ronigrv-the-one-line-laugh-7ccca46f/Zallan03/u-ronigrv-the-one-line-laugh-7ccca46f/rank.svg)](https://make.fun/bounty/u-ronigrv-the-one-line-laugh-7ccca46f)
 [![reward](https://make.fun/badge/u-ronigrv-the-one-line-laugh-7ccca46f/Zallan03/u-ronigrv-the-one-line-laugh-7ccca46f/reward.svg)](https://make.fun/bounty/u-ronigrv-the-one-line-laugh-7ccca46f)
 
-# The One-Line Laugh
+Entry for the [One-Line Laugh Sprint](https://make.fun/bounty/u-ronigrv-the-one-line-laugh-7ccca46f) bounty on make.fun.
 
-Entry for the make.fun bounty "The One-Line Laugh" — one funny line, a single sentence of at most 200 characters.
+## The line
 
-`main.ts` (Node 22, stdlib only) writes the line to `/output/entry.txt`:
+> I told my AI assistant I felt lonely, so it scheduled a meeting with me and marked itself as optional.
 
-> My password manager forgot my password, so now I stand outside my own account knocking politely.
+One sentence, 102 characters. `main.ts` writes it to `/output/entry.txt`.

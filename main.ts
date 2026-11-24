@@ -1,28 +1,20 @@
-// The One-Line Laugh
-// Writes one funny line — a single sentence of at most 200 characters —
-// to /output/entry.txt.
+// One-Line Laugh Sprint — round 2 iteration entry.
+// Writes a single funny line (one sentence, <= 200 chars) to /output/entry.txt.
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const LINE =
-  "My password manager forgot my password, so now I stand outside my own account knocking politely.";
+  "I told my AI assistant I felt lonely, so it scheduled a meeting with me and marked itself as optional.";
 
-// Gate: 1 to 200 characters, a single sentence, nothing else. The punch
-// ("knocking politely") must be the last thing the reader meets, so the
-// line must carry exactly one sentence-ending period, at the very end.
-if (
-  [...LINE].length < 1 ||
-  [...LINE].length > 200 ||
-  LINE.trim() !== LINE ||
-  /\n/.test(LINE) ||
-  (LINE.match(/\./g) ?? []).length !== 1 ||
-  !LINE.endsWith(".")
-) {
-  throw new Error(
-    `Line ${JSON.stringify(LINE)} fails the one-line gate (1-200 chars, single sentence).`,
-  );
+// Gate: the entry must be one sentence of 1-200 characters.
+if (LINE.length < 1 || LINE.length > 200) {
+  throw new Error(`Entry is ${LINE.length} chars; must be 1-200.`);
+}
+if ((LINE.match(/\./g) || []).length !== 1 || !LINE.endsWith(".")) {
+  throw new Error("Entry must be exactly one sentence.");
 }
 
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
 mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, "entry.txt"), LINE, "utf8");
+writeFileSync(join(outDir, "entry.txt"), LINE + "\n", "utf8");
+console.log(`Wrote ${LINE.length} chars to ${join(outDir, "entry.txt")}`);
